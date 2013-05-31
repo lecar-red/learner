@@ -13,7 +13,7 @@ my @data = (
     [ 'pebbles', 'cat', 12, 'f' ]
 ); 
 
-my $csv    = Text::CSV->new({ binary => 1, always_quote => 1 });
+my $csv    = Text::CSV->new({ binary => 1, always_quote => 1, eol => "\r\n" });
 my $header = shift @data;
 my $status = $csv->combine( @$header ); # normally would do print but testing combine + string
 
